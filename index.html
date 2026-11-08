@@ -4,121 +4,314 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sehar Fatima | Portfolio</title>
+
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f8f7fc;
-    color: #29243b;
+  font-family: Arial, sans-serif;
+  background: #f5f7fc;
+  color: #202b43;
+  line-height: 1.7;
 }
+
 header {
-    background: #29243b;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background: #111c35;
+  color: white;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
+
+header h2 { color: #72d6d0; }
+
 nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
 }
+
+nav a:hover { color: #72d6d0; }
+
 .hero {
-    background: #eee8f5;
-    text-align: center;
-    padding: 80px 20px;
+  background: linear-gradient(120deg, #111c35, #234c70);
+  color: white;
+  padding: 75px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
 }
+
+.hero-text { flex: 1; min-width: 260px; }
+
 .hero h1 {
-    font-size: 38px;
+  font-size: clamp(36px, 6vw, 55px);
+  margin-bottom: 15px;
 }
-.hero span {
-    color: #9662a6;
+
+.hero h1 span { color: #72d6d0; }
+
+.hero p { max-width: 570px; color: #e1eaf5; }
+
+.profile-photo {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #72d6d0;
+  background: #fff;
 }
-section {
-    padding: 40px 20px;
-    text-align: center;
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #72d6d0;
+  color: #111c35;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
 }
+
+section { padding: 65px 8%; }
+
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #172744;
+}
+
+.about {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+}
+
+.skills-grid, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
 .card {
-    background: white;
-    padding: 25px;
-    margin: 15px auto;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px #ddd;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(20,40,70,.07);
+  transition: .3s;
 }
-h2 {
-    color: #674a7c;
+
+.card:hover {
+  transform: translateY(-6px);
 }
+
+.card h3 {
+  color: #176c78;
+  margin-bottom: 10px;
+}
+
+.skill-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.project-tag {
+  display: inline-block;
+  background: #e2f5f2;
+  color: #176c78;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.education {
+  max-width: 750px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-left: 5px solid #72d6d0;
+  border-radius: 10px;
+}
+
+.contact {
+  text-align: center;
+  background: #eaf1f8;
+}
+
 footer {
-    background: #29243b;
-    color: white;
-    text-align: center;
-    padding: 20px;
+  background: #111c35;
+  color: white;
+  text-align: center;
+  padding: 22px;
+}
+
+@media(max-width:600px) {
+  header { justify-content: center; text-align: center; }
+  nav a { display: inline-block; margin: 5px; }
+  .hero { text-align: center; justify-content: center; }
+  .profile-photo { width: 190px; height: 190px; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<h2>Sehar Fatima</h2>
-<nav>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-</nav>
+  <h2>Sehar Fatima</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<div class="hero">
-<h1>Hello, I'm <span>Sehar Fatima</span></h1>
-<p>BS Mathematics Student | Aspiring Professional</p>
-<p>Learning, Exploring and Creating New Opportunities.</p>
+<div class="hero" id="home">
+  <div class="hero-text">
+    <p>WELCOME TO MY PORTFOLIO</p>
+    <h1>Hello, I'm <span>Sehar Fatima</span></h1>
+    <h3>BS Mathematics Student | Aspiring Software Developer</h3>
+    <p>
+      Exploring technology, programming, mathematics and
+      database management. Learning, building and growing
+      towards a career in software development.
+    </p>
+    <a href="#projects" class="btn">Explore My Work</a>
+  </div>
+
+  <img class="profile-photo"
+       src="IMG-20261108-WA0000.jpg"
+       alt="Sehar Fatima Profile Photo">
 </div>
 
 <section id="about">
-<h2>About Me</h2>
-<p>I am a BS Mathematics student interested in technology, business, research and professional development. I enjoy learning new skills and solving real-life problems.</p>
-</section>
-
-<section id="education">
-<h2>Education</h2>
-<div class="card">
-<h3>BS Mathematics</h3>
-<p>Developing analytical and problem-solving skills.</p>
-</div>
-</section>
-
-<section id="projects">
-<h2>My Projects</h2>
-<div class="card">
-<h3>Restaurant Management System</h3>
-<p>A database project involving restaurant operations, inventory and table reservations.</p>
-</div>
-<div class="card">
-<h3>Personal Portfolio Website</h3>
-<p>A website showcasing my education, projects and professional journey.</p>
-</div>
+  <h2 class="section-title">About Me</h2>
+  <div class="about">
+    <p>
+      I am a BS Mathematics student with a growing interest
+      in software development, programming and technology.
+      My academic background helps me develop analytical,
+      logical and problem-solving skills.
+    </p>
+    <p>
+      I am exploring Python programming, SQL databases,
+      software development and practical technology projects.
+      My goal is to turn ideas into useful digital solutions
+      and continue developing my technical abilities.
+    </p>
+  </div>
 </section>
 
 <section id="skills">
-<h2>My Skills</h2>
-<div class="card">
-<p>Mathematics</p>
-<p>Problem Solving</p>
-<p>Database Fundamentals</p>
-<p>HTML Basics</p>
-<p>Research and Learning</p>
-</div>
+  <h2 class="section-title">My Skills & Learning</h2>
+
+  <div class="skills-grid">
+    <div class="card">
+      <div class="skill-icon">🐍</div>
+      <h3>Python Programming</h3>
+      <p>Learning Python fundamentals, programming logic and problem-solving.</p>
+    </div>
+
+    <div class="card">
+      <div class="skill-icon">🗄️</div>
+      <h3>SQL & Databases</h3>
+      <p>Working with SQL, database concepts, tables and data management.</p>
+    </div>
+
+    <div class="card">
+      <div class="skill-icon">💻</div>
+      <h3>Software Development</h3>
+      <p>Exploring website development and building practical software solutions.</p>
+    </div>
+
+    <div class="card">
+      <div class="skill-icon">📐</div>
+      <h3>Mathematics & Algebra</h3>
+      <p>Studying mathematical concepts, abstract algebra and logical reasoning.</p>
+    </div>
+  </div>
 </section>
 
-<section id="contact">
-<h2>Contact Me</h2>
-<p>Email: Add your email address here</p>
-<p>GitHub: Add your GitHub profile link here</p>
+<section id="projects">
+  <h2 class="section-title">My Projects</h2>
+
+  <div class="projects-grid">
+    <div class="card">
+      <h3>Restaurant Management System</h3>
+      <p>
+        A DBMS project focused on restaurant operations,
+        customer management, table reservations, menu
+        management and inventory tracking.
+      </p>
+      <span class="project-tag">SQL / DBMS</span>
+    </div>
+
+    <div class="card">
+      <h3>Algebra Project</h3>
+      <p>
+        An academic mathematics project exploring
+        algebraic concepts, structures and logical
+        problem-solving.
+      </p>
+      <span class="project-tag">Mathematics</span>
+    </div>
+
+    <div class="card">
+      <h3>Python Programming</h3>
+      <p>
+        Practising programming fundamentals and developing
+        logical thinking through Python exercises.
+      </p>
+      <span class="project-tag">Python</span>
+    </div>
+
+    <div class="card">
+      <h3>Personal Portfolio Website</h3>
+      <p>
+        My own professional portfolio website, created
+        to present my academic background, technical
+        interests, skills and projects.
+      </p>
+      <span class="project-tag">HTML / CSS</span>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="education">
+    <h3>BS Mathematics</h3>
+    <p>Undergraduate Student</p>
+    <p>Developing knowledge in mathematics, abstract algebra,
+       classical mechanics and computer-related subjects.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Let's Connect</h2>
+  <p>Thank you for visiting my portfolio.</p>
+  <p>I am always interested in learning, collaboration
+     and new opportunities.</p>
+  <p>Let's connect and grow together!</p>
 </section>
 
 <footer>
-<p>© 2026 Sehar Fatima | Personal Portfolio</p>
+  <p>© 2026 Sehar Fatima | Personal Portfolio</p>
+  <p>Learning Today • Building Tomorrow</p>
 </footer>
 
 </body>
